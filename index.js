@@ -9,7 +9,7 @@ const crypto = require('crypto')
 
 class BackupArcGISService {
 
-    constructor(url, dir) {
+    constructor(url, dir, token) {
 
         if(!url || !dir) {
             throw new Error('2 Parameters Required (Service URL, Working Directory Path)')
@@ -19,6 +19,7 @@ class BackupArcGISService {
         this.workingDir = dir.slice(-1) == '/' ? dir.slice(0,-1) : dir
         this.serviceDetails = undefined
         this.duplicate = false
+        this.token = token ? token : ''
         
     }
 
@@ -26,7 +27,7 @@ class BackupArcGISService {
     async getItemId() {
 
         try {
-            const response = await axios.get(this.serviceUrl + '?f=json')
+            const response = await axios.get(this.serviceUrl + '?f=json' + `&token=${this.token}`)
             this.serviceDetails = await response.data
             return this.serviceDetails.serviceItemId
         } catch (err) {
@@ -44,7 +45,8 @@ class BackupArcGISService {
             outSR: '4326',
             returnGeometry: 'true',
             f: 'geojson',
-            outFields: '*'
+            outFields: '*',
+            token: this.token
         }
 
         try {

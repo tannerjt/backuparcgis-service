@@ -30,7 +30,7 @@ $ npm install backuparcgis-service
 ```javascript
 const BackupArcGISService = require('backuparcgis-service')
 
-// new BackupArcGIS(serviceURL, archiveDirectory)
+// new BackupArcGIS(serviceURL, archiveDirectory, ?token)
 const Backup = new BackupArcGISService('https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/state_parks/FeatureServer/0', outDir)
 
 Backup.run().then((resp) => {
