@@ -1,7 +1,7 @@
 # test output
-test/require/*
-test/terminal/*
-test/secure/*
+test/require/archive/**/*
+test/terminal/archive/**/*
+test/secure/archive/**/*
 
 # Logs
 logs
