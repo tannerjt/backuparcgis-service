@@ -7,7 +7,7 @@ const fs = require('fs')
 const fsPromises = require('./lib/fs-promise')
 const crypto = require('crypto')
 
-class BackupArcGIS {
+class BackupArcGISService {
 
     constructor(url, dir) {
 
@@ -155,12 +155,12 @@ if(require.main == module) {
     // if run as node process
     if ( process.argv.length < 4 ) {
         console.log('ArcGIS (Hosted) Feature Service URL and working directory path required')
-        console.log('example: backuparcgis https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/state_parks/FeatureServer/0 ./')
+        console.log('example: backuparcgis-service https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/state_parks/FeatureServer/0 ./')
         process.exitCode = 1
         return
     }
 
-    const backup = new BackupArcGIS(process.argv[2], process.argv[3])
+    const backup = new BackupArcGISService(process.argv[2], process.argv[3])
     backup.run().then((resp) => {
         if(!resp.duplicate) {
             console.log(`${resp.serviceDetails.name} completed: ${resp.filename}`)
@@ -170,5 +170,5 @@ if(require.main == module) {
     })
 } else {
     // if run by require()
-    module.exports = BackupArcGIS
+    module.exports = BackupArcGISService
 }
