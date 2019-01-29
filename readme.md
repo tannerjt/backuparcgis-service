@@ -45,7 +45,7 @@ Backup.run().then((resp) => {
 ## Run from command line
 
 ```bash
-$ npm install backuparcgis-service
+$ npm install backuparcgis-service --global
 ```
 
 **Format:**
