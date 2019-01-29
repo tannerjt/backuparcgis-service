@@ -1,5 +1,6 @@
 {
   "name": "backuparcgis",
+  "homepage": "https://github.com/tannerjt/backuparcgis#readme",
   "version": "1.0.0",
   "engines": {
     "node": ">8.9.0"
@@ -11,6 +12,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:tannerjt/backuparcgis"
   },
   "author": "Joshua Tanner (@Tanner_GEO)",
   "license": "ISC",
