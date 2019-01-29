@@ -1,14 +1,14 @@
 {
   "name": "backuparcgis-service",
   "homepage": "https://github.com/tannerjt/backuparcgis-service#readme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">8.9.0"
   },
   "description": "Async module to backup content from ArcGIS Online hosted feature services.",
   "main": "index.js",
   "bin": {
-    "backuparcgis": "./index.js"
+    "backuparcgis-service": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
