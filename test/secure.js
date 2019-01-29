@@ -20,7 +20,6 @@ if(require.main == module) {
         if(!response.data.token) {
             console.log('No Token Returned.  Check Credentials')
         } else {
-            console.log(response.data.token)
             const outDir = './secure'
             const Backup = new BackupArcGISService('https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/1548710379770/FeatureServer/0', outDir, response.data.token)
             Backup.run().then((resp) => {
