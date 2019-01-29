@@ -71,3 +71,14 @@ The library will respond with a promise with the following object:
     "filename": "string"
 }
 ```
+
+## File Storage Format
+
+A new archive directory will be created in your specified output directory.  Within the archive directory, a new folder will be created for each feature service, which is named the same as the item id in ArcGIS Online.  Data will be versioned by timestamp, only storing new datasets that are different from the previous export (sha256 hash comparisons).
+
+```
+archive  
+└───arcgis_item_id
+    │--timestamp.geojson
+    │--timestamp.geojson
+```
