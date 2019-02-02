@@ -68,6 +68,7 @@ class BackupArcGISService {
 
         // get latest file in directory
         const files = await fsPromises.readdir(`${this.workingDir}/archive/${itemId}`)
+        files.sort()
         const latest = files[files.length - 1]
         const latestHash = await hashFile(`${this.workingDir}/archive/${itemId}/${latest}`, handleErr)
         if(tmpHash === latestHash) {
