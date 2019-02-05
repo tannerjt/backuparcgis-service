@@ -7,6 +7,10 @@ Hosted Feature Services in ArcGIS Online are a great way to host and serve geosp
 
 This library, *backuparcgis-service*, is a performant asynchronous streaming nodejs library that can be imported as a nodejs module or run directly from command line.
 
+## Limitations
+
+Large datasets can fail and timeout.  The script also does not store attachments.  For large datasets and backup of attachments, use [backuparcgis-item](https://github.com/tannerjt/backuparcgis-item).  backuparcgis-item uses the export functionality of ArcGIS Online to create an archived file geodatabase backup.
+
 ## Features
 
 ### Asynchronous 
